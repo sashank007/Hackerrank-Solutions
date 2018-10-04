@@ -1,0 +1,43 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import itertools
+# Complete the icecreamParlor function below.
+def icecreamParlor(m, arr):
+    co =list(itertools.combinations(arr,2))
+    print("array given --> ",arr,m)
+    val1=0
+    val2=0
+    for i in co:
+        i = list(i)
+        if i[0]+i[1]==m:
+            print("values -->" , i[0] , i[1])
+            val1=arr.index(i[0])+1
+            val2=arr.index(i[1] , val1)+1
+    return val1,val2
+            
+            
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        m = int(input())
+
+        n = int(input())
+
+        arr = list(map(int, input().rstrip().split()))
+
+        result = icecreamParlor(m, arr)
+
+        fptr.write(' '.join(map(str, result)))
+        fptr.write('\n')
+
+    fptr.close()
