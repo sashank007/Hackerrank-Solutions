@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the pickingNumbers function below.
+def pickingNumbers(a):
+    res=[]
+    
+    count=0
+    a.sort()
+    print(a)
+    i=0
+    for i in range(len(a)-1):
+        temp=[]
+        j=i+1
+        curr=a[i]
+        temp.append(curr)
+        while(j<n):
+            if abs(curr-a[j])<=1:
+                temp.append(a[j])
+            j=j+1
+        res.append(temp)        
+    x= list(map(lambda x: len(x) ,res))
+    return max(x)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = pickingNumbers(a)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
