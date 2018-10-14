@@ -1,0 +1,10 @@
+import itertools
+from collections import OrderedDict
+def merge_the_tools(string, k):
+    i=0
+    res=[]
+    while i <len(string):
+        t = string[i:i+k]
+        res.append("".join(OrderedDict.fromkeys(t)))
+        i+=k
+    [print(x) for x in res]
