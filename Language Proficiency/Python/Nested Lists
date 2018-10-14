@@ -1,0 +1,25 @@
+import sys
+if __name__ == '__main__':
+    nestedL=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        nestedL.append([name,score])
+    nestedL.sort(key=lambda x : x[1])
+    result=[]
+    scores=[]
+    for i in range(len(nestedL)):
+        scores.append(nestedL[i][1])
+    lowestScore=0
+    lowestScores = list(set(scores))
+    lowestScores.sort()
+    lowestScore = lowestScores[1]
+    
+    
+    for i in range(len(nestedL)):
+        if lowestScore==nestedL[i][1]:
+            result.append(nestedL[i][0])
+    result.sort()
+    # print(scores , lowestScore)
+    for x in result:
+        print(x)
