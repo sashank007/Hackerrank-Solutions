@@ -1,0 +1,11 @@
+n=int(input())
+from collections import OrderedDict,Counter
+od = OrderedDict()
+class OrderedCounter(Counter , OrderedDict):
+    pass
+
+for i in range(n):
+    name, _ ,price= input().rpartition(' ')
+    od[name] = od.get(name , 0 )+ int(price)
+for key,value in od.items():
+    print (key ,value)
