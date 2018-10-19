@@ -1,0 +1,14 @@
+import re
+n = input()
+success=True
+for i in range(int(n)):
+    s = input()
+    try:
+        m=re.search(s , '')
+        success=True
+    except:
+        success=False
+        pass
+    print(success)
+            
+            
