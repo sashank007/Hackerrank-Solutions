@@ -1,0 +1,6 @@
+n = int(input())
+for i in range(n):
+    _ = int(input())
+    arr =list(map(int,input().split()))
+    maxVal = max(arr)
+    print("Yes") if arr[0]==maxVal or arr[-1]==maxVal else print("No")
