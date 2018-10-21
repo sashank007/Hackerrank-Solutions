@@ -1,0 +1,12 @@
+c , r = input().split()
+c=int(c)
+r=int(r)
+arr=[]
+result=[]
+for i in range(r):
+    tempArr =list(map(float,input().split()))
+    arr.append(tempArr)
+x = list(zip(*arr))
+for i in x:
+    result.append(sum(i)/len(i))
+[print(avges) for avges in result]
