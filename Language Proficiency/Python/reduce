@@ -1,0 +1,6 @@
+from fractions import gcd
+def product(fracs):
+    n=1
+    d=1
+    t = reduce ( lambda x , y : x*y,fracs)
+    return t.numerator,t.denominator
