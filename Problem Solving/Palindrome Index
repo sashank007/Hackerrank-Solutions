@@ -1,0 +1,49 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import collections
+# Complete the palindromeIndex function below.
+def palindromeIndex(s):
+    print("initial string -->" , s)
+    print("Reversed string -->" , s[::-1])
+    revString = ""
+    originalS=s
+    if s==s[::-1]:
+        print("Palindrome already.")
+        return -1
+    i , j = findMismatch(s)
+    #check if that particular value when replaced forms a palindrome
+    s =s[:i] + "" +s[i+1:]
+    if s==s[::-1]:
+        return i
+    else:
+        return j
+    
+def findMismatch(s):
+    i = 0 
+    j = len(s)-1
+    while(i < j and s[i]==s[j]):
+        i = i+1
+        j=j-1
+    print("the indices dont match at " , i , j)
+    return i , j
+
+        
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = palindromeIndex(s)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
