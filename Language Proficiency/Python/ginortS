@@ -1,0 +1,34 @@
+s = input()
+alpha=""
+num=""
+lower=""
+upper=""
+odd=""
+even=""
+for i in s:
+    if i.isnumeric():
+        num+=i
+    elif i.islower():
+        lower+=i
+    elif i.isupper():
+        upper+=i
+alpha=list(alpha)
+for i in num:
+    if int(i)%2!=0:
+        odd+=i
+    else:
+        even+=i
+odd = list(odd)
+even  = list(even)
+even.sort()
+odd.sort()
+even = "".join(even)
+odd = "".join(odd)
+lower=list(lower)
+upper=list(upper)
+lower.sort()
+upper.sort()
+lower = "".join(lower)
+upper="".join(upper)
+print(lower+upper+odd+even)
+
