@@ -1,0 +1,15 @@
+def decodeHuff(root, s):
+    result = []
+    roo=root
+    for i in s:
+            if i=='1':
+                roo=roo.right
+                if roo.right==None:
+                    result.append(roo.data)
+                    roo=root#go back up
+            elif i=='0':
+                roo=roo.left
+                if roo.left==None:
+                    result.append(roo.data)
+                    roo = root                
+    print("".join(result))
