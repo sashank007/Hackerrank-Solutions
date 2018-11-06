@@ -1,0 +1,20 @@
+#floyd detection algorithm
+def has_cycle(head):
+    tortoise=  head
+    hare = head
+    while(hare and hare.next):
+        hare = hare.next.next
+        tortoise = tortoise.next
+        if hare==tortoise:
+            return True
+    return False
+    
+def has_cycle(head):
+    visited=[]
+    while head:
+        if head in visited:
+            return True
+        else:
+            visited.append(head)
+            head=head.next
+    return False
