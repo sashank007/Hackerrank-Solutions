@@ -1,0 +1,14 @@
+def dynamicArray(n, queries):
+    seqList= [[]*i for i in range(n)]
+    initialValue=0
+    result=[]
+    for x in queries:
+        seq = (x[1]^initialValue)%n
+        if x[0]==1:
+            seqList[seq].append(x[2])
+        elif x[0]==2:
+            elem = seqList[seq][x[2]%len(seqList[seq])]
+            initialValue=elem
+            result.append(initialValue)
+    return result
+            
