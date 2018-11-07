@@ -1,0 +1,9 @@
+def compare_lists(llist1, llist2):
+    while(llist1 or llist2):
+        if not llist1 or not llist2:
+            return False
+        if llist1.data != llist2.data:
+            return False
+        llist1=llist1.next
+        llist2=llist2.next
+    return True
