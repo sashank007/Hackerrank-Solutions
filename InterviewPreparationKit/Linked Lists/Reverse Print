@@ -1,0 +1,17 @@
+# Complete the reversePrint function below.
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+def reversePrint(head):
+    res=[]
+    while head:
+        res.append(head.data)
+        head=head.next
+    for i in res[::-1]:
+        print(i)
