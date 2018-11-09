@@ -1,0 +1,20 @@
+# Complete the insertNodeAtTail function below.
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+def insertNodeAtTail(head, data):
+    h=head
+    newNode = SinglyLinkedListNode(data)
+    if head==None:
+        return newNode
+    while(h.next):
+        h=h.next
+    h.next=newNode
+    return head
+    
