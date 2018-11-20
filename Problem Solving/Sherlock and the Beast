@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the decentNumber function below.
+
+def decentNumber(n):
+    threes=n 
+    while(threes%3!=0):
+        threes=threes-5
+        if threes<0:
+            print(-1)
+            return
+    print(('5'*threes+'3'*(n-threes)))
+
+if __name__ == '__main__':
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+        decentNumber(n)
