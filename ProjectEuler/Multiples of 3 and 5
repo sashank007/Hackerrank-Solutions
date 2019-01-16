@@ -1,0 +1,14 @@
+import sys
+
+
+t = int(input().strip())
+for a0 in range(t):
+    total=0
+    n = int(input().strip())
+    p = (n-1)//3;
+    total = ((3*p*(p+1))//2);
+    p = (n-1)//5
+    total+= ((5*p*(p+1))//2)
+    p =(n-1)//15
+    total-=((15*p*(p+1))//2)
+    print(total)
