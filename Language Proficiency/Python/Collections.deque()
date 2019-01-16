@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+ops = int(input())
+d=deque()
+for i in range(ops):
+    inputs = input().split()
+    if len(inputs)==2:
+        func = "d."+inputs[0]+"(" + inputs[1] + ")"
+    else:
+        func = "d."+inputs[0]+"()"
+    eval(func)
+for val in d:
+    print(val , end=' ')
+
+
