@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+n = input();
+shoeSizes =list( map(int ,input().split()))
+count= Counter(shoeSizes)
+customers = int(input())
+total=0
+for  i in range(customers):
+    inputs = list(map(int,input().split()))
+    if inputs[0] in count.keys() and count[inputs[0]]!=0:
+        total+=inputs[1]
+        count[inputs[0]]-=1
+print(total)
