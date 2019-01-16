@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import functools
+from collections import Counter
+import operator
+def compare_names( x,  y):
+    if x[1]==y[1]:
+        if x[0]<y[0]:
+            return -1
+        else:
+            return 1
+    return 0
+if __name__ == '__main__':
+    s = input()
+    count = Counter(s)
+    sorted_x = sorted(count.items(), key=operator.itemgetter(1) ,reverse = True)
+    sorted_x=sorted(sorted_x, key=functools.cmp_to_key(compare_names))[0:3]
+    for i in sorted_x:
+        print(i[0] , i[1])
+
