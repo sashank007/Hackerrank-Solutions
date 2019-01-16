@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+n = int(input())
+cols = (input().split())
+Students =namedtuple('Students',cols)
+average=0
+count=0
+for i in range((n)):
+    a , b , c , d = input().split();
+    student = Students(a,b,c,d)
+    average+=int(student.MARKS)
+    count+=1
+print("{:.2f}".format(average/count))
