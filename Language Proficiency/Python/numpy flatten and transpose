@@ -1,0 +1,11 @@
+import numpy
+val=list( map(int,input().split(' ') ))
+x= []
+for i in range(val[0]):
+    y=[]
+    y = list(map(int,input().split(' ')))
+    x.append(y)
+y=numpy.transpose(x)
+x = numpy.array(x)
+print(y)
+print(x.flatten())
