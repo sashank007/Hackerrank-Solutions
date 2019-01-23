@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    N = int(input())
+    x = []
+    for i in range(N):
+        vals = input().split(' ')
+        if vals[0]=='print':
+            print(x)
+        elif len(vals)==3:
+            eval('x.'+vals[0] +'(' + vals[1] +"," + vals[2] + ")")
+        elif len(vals)==2:
+            eval('x.' + vals[0]+ "(" + vals[1] + ")")
+        else:
+            eval('x.' + vals[0] + "()")
