@@ -1,0 +1,22 @@
+cube = lambda x: x**3# complete the lambda function 
+
+def fibonacci(n):
+    res=[]
+    fib1=0
+    fib2=1
+    res.append(fib1)
+    res.append(fib2)
+    newFib=0
+    if n==0:
+        return []
+    if n==1:
+        return [0]
+    for i in range(0,n-2):
+        newFib=fib1+fib2
+        res.append(newFib)
+        fib1=fib2
+        fib2=newFib
+    return res
+    print(res)
+
+if __name__ == '__main__':
