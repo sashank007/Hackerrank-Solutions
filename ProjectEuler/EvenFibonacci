@@ -1,0 +1,45 @@
+
+import sys
+
+
+def mult(x ,y ):
+    if(len(y)==2):
+        a = x[0]*y[0] + x[1]*y[1]
+        b= x[2]*y[0] + x[3]*y[1]
+        return [a,b]
+    a = x[0]*y[0] + x[1]*y[2]
+    b = x[0]*y[1] + x[1]*y[3]
+    c= x[2]*y[0] + x[3]*y[2]
+    d = x[2]*y[1] + x[3]*y[3]
+    return [a,b,c,d]
+
+def matrix_mult(x , n):
+    if(n==1):
+        return x
+    if(n%2==0):
+        return matrix_mult(mult( x , x) , n//2)
+    else:
+        return mult(x , matrix_mult(mult(x ,x) , n//2))
+
+t = int(input().strip())
+z = [1,0]
+A = [1,1,1,0]
+
+for a0 in range(t):
+    evenSum=0
+    n = int(input().strip())
+    fib = mult(matrix_mult(A , 1) , z)[0]
+    i=2
+    j=0
+    fib=2
+    evenSum+=fib
+    while 4*i+j<n:
+        fib=4*i + j
+      
+        evenSum+=fib
+        j=i
+        i=fib
+        
+    print(evenSum)
+            
+    
