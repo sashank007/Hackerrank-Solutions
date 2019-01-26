@@ -1,0 +1,32 @@
+
+import sys
+import math
+def maxPrimeFactors (n): 
+      
+    # Initialize the maximum prime factor 
+    # variable with the lowest one 
+    maxPrime = -1
+      
+    # Print the number of 2s that divide n 
+    while n % 2 == 0: 
+        maxPrime = 2
+        n >>= 1     # equivalent to n /= 2 
+          
+    # n must be odd at this point,  
+    # thus skip the even numbers and  
+    # iterate only for odd integers 
+    for i in range(3 , int(math.sqrt(n) ) +1 , 2):
+        while n%i==0:
+            maxPrime = i
+            n/=i
+    #right now , n has been boiled down to its least value , now check if this value is greater than 2 , if s o
+    #assign this value to maxPrime
+    if n>2:
+        maxPrime = n
+    return int(maxPrime) 
+  
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input())
+    print(maxPrimeFactors(n))
