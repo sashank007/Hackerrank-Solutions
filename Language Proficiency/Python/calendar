@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import calendar
+cal = ['MONDAY' , 'TUESDAY' , 'WEDNESDAY' , 'THURSDAY' , 'FRIDAY' , 'SATURDAY','SUNDAY']
+date = raw_input()
+month = date[0:2]
+day = date[3:5]
+year = date[6:]
+d = calendar.weekday(int(year) , int(month) ,int( day))
+print(cal[d])
+
+
+
