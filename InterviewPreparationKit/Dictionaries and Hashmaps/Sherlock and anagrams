@@ -1,0 +1,26 @@
+import string
+
+q = int(raw_input())
+
+ALPHABET = string.ascii_lowercase
+
+for _ in xrange(q):
+    s = raw_input()
+    #signatures is the dictionary
+    signatures = {}
+    signature = [0 for _ in ALPHABET]
+    for  i in s:
+        signature[ord(i)-ord('a')]+=1
+    for i in range(len(s)):
+        for j in range(i , len(s)):
+            signature = [0 for _ in ALPHABET]
+            for letter in s[i:j+1]:
+                signature[ord(letter) - ord(ALPHABET[0])]+=1
+            #tuples are hashable baby!
+            signature = tuple(signature)
+            signatures[signature] = signatures.get(signature,0) +1
+    res = 0
+    for count in signatures.values():
+        res += count*(count-1)/2
+    print res
+
