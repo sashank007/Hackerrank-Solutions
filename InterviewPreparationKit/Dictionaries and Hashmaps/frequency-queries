@@ -20,7 +20,7 @@ def freqQuery(queries):
         elif q[0]==2:
             d[q[1]]=(freq-1 if freq>0 else 0)
             freqs[freq].discard(q[1])
-            freqs[freq-1].add(q[1])
+            freqs[max(0,freq-1)].add(q[1])
         elif q[0]==3:
             result.append(1 if freqs[q[1]] else 0)
     return result
