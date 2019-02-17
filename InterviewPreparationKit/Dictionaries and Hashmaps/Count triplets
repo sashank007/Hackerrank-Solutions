@@ -1,0 +1,49 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+# Complete the countTriplets function below.
+def countTriplets(arr, r):
+    ans=0
+    second = {}
+    third = {}
+   
+    for k in arr:
+        print("current K:"  , k)
+        #if k is in the third dictionary , that is number of triplets
+        if k in third:
+            ans+=third[k]
+        #if k is in the second dictionary , it means the value must be added in the third to be 
+        #checked in the previous condition, else: it is incremented by 1
+        if k in second:
+            if k*r in third:
+                third[k*r]+=second[k]
+            else:
+                third[k*r]=second[k]
+        #if k*r is in second, then it is just incrementing existing value by 1 , else                    #instantiate the value
+        if k*r in second:
+            second[k*r]+=1
+        else:
+            second[k*r]=1
+    return ans
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nr = raw_input().rstrip().split()
+
+    n = int(nr[0])
+
+    r = int(nr[1])
+
+    arr = map(long, raw_input().rstrip().split())
+
+    ans = countTriplets(arr, r)
+
+    fptr.write(str(ans) + '\n')
+
+    fptr.close()
